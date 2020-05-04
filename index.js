@@ -3,10 +3,15 @@
 
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
-// If user wants uppercase letters
-// If user wants lowercase letters
-// If user wnats to include numbers
-// If user wants to include symbols
+
+// If user wants uppercase letters-FUNCTION
+function getRandomUpper() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+console.log(getRandomUpper());
+// If user wants lowercase letters-FUNCTION
+// If user wants to include numbers-FUNCTION
+// If user wants to include symbols-FUNCTION
 
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
