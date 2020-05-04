@@ -1,12 +1,22 @@
 //  Introduction
 //  The reason for this javascript is to genereate a random passwords based on what user selected - criteria.
 
+// I'm going to put each one of those functions into an object called randomFunc
+
+const randomFunc = {
+  lower: getRandomLower,
+  upper: getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol,
+};
+
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
 
 // If user wants uppercase letters-FUNCTION
 //  fromCharCode the Upper letters begin at 65( which is why there is + 65).
 function getRandomUpper() {
+  prompt(" ");
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
 console.log(getRandomUpper());
@@ -16,18 +26,18 @@ function getRandomLower() {
 }
 console.log(getRandomLower());
 
+// If user wants to include numbers-FUNCTION
 function getRandomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 console.log(getRandomNumber());
 
+// If user wants to include symbols-FUNCTION
 function getRandomSymbol() {
   const symbols = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 console.log(getRandomSymbol());
-// If user wants to include numbers-FUNCTION
-// If user wants to include symbols-FUNCTION
 
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
