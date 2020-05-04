@@ -10,6 +10,10 @@ function getRandomUpper() {
 }
 console.log(getRandomUpper());
 // If user wants lowercase letters-FUNCTION
+function getRandomLower() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+console.log(getRandomLower());
 // If user wants to include numbers-FUNCTION
 // If user wants to include symbols-FUNCTION
 
