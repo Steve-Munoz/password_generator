@@ -5,6 +5,7 @@
 // password length
 
 // If user wants uppercase letters-FUNCTION
+//  fromCharCode the Upper letters begin at 65( which is why there is + 65).
 function getRandomUpper() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
@@ -14,6 +15,11 @@ function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 console.log(getRandomLower());
+
+function getRandomNumber() {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+console.log(getRandomNumber());
 // If user wants to include numbers-FUNCTION
 // If user wants to include symbols-FUNCTION
 
