@@ -15,6 +15,10 @@ var loweranswer = null;
 var numericanswer = null;
 var symbolanswer = null;
 
+// Alert the user for the meaning behind the behind this page and introduce them to steps to follow
+alert(" Welcome to Password Generator");
+alert(" Choose the following criteria for your password");
+
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
 
