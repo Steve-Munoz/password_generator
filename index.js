@@ -19,6 +19,23 @@ var symbolanswer = null;
 alert(" Welcome to Password Generator");
 alert(" Choose the following criteria for your password");
 
+// Determine the size of the password.
+
+while (passwordLength > 128 || passwordLength < 8 || passwordLength === 0) {
+  passwordLength = prompt(
+    "How long do you want this password to be? (Must be between 8 and 128 characters)"
+  );
+
+  passwordLength = parseInt(passwordLength, 10);
+
+  if (passwordLength <= 128 && passwordLength >= 8 && passwordLength !== NaN) {
+    alert("Your password will be " + passwordLength + " characters long.");
+  } else {
+    alert("Please enter a valid answer.");
+    passwordLength = 0;
+  }
+}
+
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
 
