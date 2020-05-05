@@ -3,12 +3,17 @@
 
 // I'm going to put each one of those functions into an object called randomFunc
 
-const randomFunc = {
-  lower: getRandomLower,
-  upper: getRandomUpper,
-  number: getRandomNumber,
-  symbol: getRandomSymbol,
-};
+//  set the needed the variables
+var passwordLength = 0;
+var uppercase;
+var lowercase;
+var symbol;
+var numeric;
+
+var upperanswer = null;
+var loweranswer = null;
+var numericanswer = null;
+var symbolanswer = null;
 
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
