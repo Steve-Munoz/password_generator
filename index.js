@@ -36,6 +36,23 @@ while (passwordLength > 128 || passwordLength < 8 || passwordLength === 0) {
   }
 }
 
+// determine if the password will contain uppercase
+
+while (uppercase !== "yes" && uppercase !== "no") {
+  uppercase = prompt(
+    "Do you want upper-case characters? (Please answer yes or no)"
+  );
+  uppercase = uppercase.toLowerCase();
+
+  if (uppercase === "yes") {
+    upperanswer = true;
+  } else if (uppercase === "no") {
+    upperanswer = false;
+  } else {
+    alert("Please enter a valid answer.");
+  }
+}
+
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
 
