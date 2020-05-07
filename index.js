@@ -36,18 +36,17 @@ while (passwordLength > 128 || passwordLength < 8 || passwordLength === 0) {
   }
 }
 
-// determine if the password will contain uppercase
-
-while (uppercase !== "yes" && uppercase !== "no") {
-  uppercase = prompt(
-    "Do you want upper-case characters? (Please answer yes or no)"
+// Asking for the use of lower-case letters in the password.
+while (lowercase !== "yes" && lowercase !== "no") {
+  lowercase = prompt(
+    "Do you want lower-case characters? (Please answer yes or no)"
   );
-  uppercase = uppercase.toLowerCase();
+  lowercase = lowercase.toLowerCase();
 
-  if (uppercase === "yes") {
-    upperanswer = true;
-  } else if (uppercase === "no") {
-    upperanswer = false;
+  if (lowercase === "yes") {
+    loweranswer = true;
+  } else if (lowercase === "no") {
+    loweranswer = false;
   } else {
     alert("Please enter a valid answer.");
   }
