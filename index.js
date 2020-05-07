@@ -66,6 +66,20 @@ while (numeric !== "yes" && numeric !== "no") {
   }
 }
 
+// Ask user for the use of special characters in the password.
+while (symbol !== "yes" && symbol !== "no") {
+  symbol = prompt("Do you want special characters? (Please answer yes or no)");
+  symbol = symbol.toLowerCase();
+
+  if (symbol === "yes") {
+    symbolanswer = true;
+  } else if (symbol === "no") {
+    symbolanswer = false;
+  } else {
+    alert("Please enter a valid answer.");
+  }
+}
+
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
 
