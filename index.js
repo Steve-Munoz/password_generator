@@ -24,7 +24,6 @@
 
 // THEN the password is either displayed in an alert or written to the page
 
-
 //  set the needed the variables
 var passwordLength = 0;
 var uppercase;
@@ -102,113 +101,119 @@ while (symbol !== "yes" && symbol !== "no") {
   }
 }
 
-
-  // Keeps the user from inputing all criteria as false.
-  if (
-    upperanswer === false &&
-    loweranswer === false &&
-    numericanswer === false &&
-    symbolanswer === false
-  ) {
-    uppercase = null;
-    upperanswer = null;
-    lowercase = null;
-    loweranswer = null;
-    numeric = null;
-    numericanswer = null;
-    symbol = null;
-    symbolanswer = null;
-    passwordLength = 0;
-    alert("You must choose at least one of the criteria. Please start again.");
-  } else {
-    alert("Thank you.");
-  }
+// Keeps the user from inputing all criteria as false.
+if (
+  upperanswer === false &&
+  loweranswer === false &&
+  numericanswer === false &&
+  symbolanswer === false
+) {
+  uppercase = null;
+  upperanswer = null;
+  lowercase = null;
+  loweranswer = null;
+  numeric = null;
+  numericanswer = null;
+  symbol = null;
+  symbolanswer = null;
+  passwordLength = 0;
+  alert("You must choose at least one of the criteria. Please start again.");
+} else {
+  alert("Thank you.");
 }
-
 
 //Setting up where the password will be generated and the buttons.
 var password = document.querySelector(".pass");
 
 //Setting up all possible strings.
 if (upperanswer === true) {
-    var upCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  
-}
-else {
-    var upCharacters = "";
+  var upCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+} else {
+  var upCharacters = "";
 }
 
 if (loweranswer === true) {
-    var lowCharacters = "abcdefghijklmnopqrstuvwxyz";
-}
-else {
-    var lowCharacters = "";
+  var lowCharacters = "abcdefghijklmnopqrstuvwxyz";
+} else {
+  var lowCharacters = "";
 }
 
 if (numericanswer === true) {
-    var numCharacters = "1234567890";
-}
-else {
-    var numCharacters = "";
-}
-
-if (specialanswer === true) {
-    var specCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~"; 
-}
-else {
-    var specCharacters = "";
+  var numCharacters = "1234567890";
+} else {
+  var numCharacters = "";
 }
 
+if (symbolanswer === true) {
+  var specCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+} else {
+  var specCharacters = "";
+}
 
 //Generating the password.
 function makepass(length) {
-    var result = "";
-    var characters = upCharacters + lowCharacters + numCharacters + specCharacters;
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-       result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
+  var result = "";
+  var characters =
+    upCharacters + lowCharacters + numCharacters + specCharacters;
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
 }
-password.textContent = makepass(size);
-
-
-//Create new password.
-newpassword.addEventListener("click", function (event) {
-    event.preventDefault();
-    password.textContent = makepass(size);
-});
-
+password.textContent = makepass(passwordLength);
 
 //Selecting the buttons from the DOM.
 var newpassword = document.querySelector(".button1");
-var copypassword = document.querySelector(".button2");
+var copypassword = document.querySelector(".button1");
 
-//  I will start off by creating FOUR different FUNCTIONS FOR the following
-// password length
+//Create new password.
+newpassword.addEventListener("click", function (event) {
+  event.preventDefault();
+  password.textContent = makepass(passwordLength);
+});
 
-// If user wants uppercase letters-FUNCTION
-//  fromCharCode the Upper letters begin at 65( which is why there is + 65).
-function getRandomUpper() {
-  prompt(" ");
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-console.log(getRandomUpper());
-// If user wants lowercase letters-FUNCTION
-function getRandomLower() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-console.log(getRandomLower());
+//Copy the password to the clipboard.
+copypassword.addEventListener("click", function () {
+  var inputpass = document.createElement("input");
+  document.body.appendChild(inputpass);
+  inputpass.value = password.textContent;
+  inputpass.select();
+  document.execCommand("copy");
+  inputpass.remove();
+  alert("Copied password to the clipboard.");
+});
 
-// If user wants to include numbers-FUNCTION
-function getRandomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-console.log(getRandomNumber());
+//  I was trying to do it this way at first and then got confused.
 
-// If user wants to include symbols-FUNCTION
-function getRandomSymbol() {
-  const symbols = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
-  return symbols[Math.floor(Math.random() * symbols.length)];
-}
-console.log(getRandomSymbol());
+// var newpassword = document.querySelector(".button1");
+// var copypassword = document.querySelector(".button2");
 
+// //  I will start off by creating FOUR different FUNCTIONS FOR the following
+// // password length
+
+// // If user wants uppercase letters-FUNCTION
+// //  fromCharCode the Upper letters begin at 65( which is why there is + 65).
+// function getRandomUpper() {
+//   prompt(" ");
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+// }
+// console.log(getRandomUpper());
+// // If user wants lowercase letters-FUNCTION
+// function getRandomLower() {
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+// }
+// console.log(getRandomLower());
+
+// // If user wants to include numbers-FUNCTION
+// function getRandomNumber() {
+//   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+// }
+// console.log(getRandomNumber());
+
+// // If user wants to include symbols-FUNCTION
+// function getRandomSymbol() {
+//   const symbols = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+//   return symbols[Math.floor(Math.random() * symbols.length)];
+// }
+// console.log(getRandomSymbol());
