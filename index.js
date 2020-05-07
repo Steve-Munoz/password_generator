@@ -103,6 +103,40 @@ while (symbol !== "yes" && symbol !== "no") {
   }
 }
 
+
+//Setting up where the password will be generated and the buttons.
+var password = document.querySelector(".pass");
+
+//Setting up all possible strings.
+if (upperanswer === true) {
+    var upCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  
+}
+else {
+    var upCharacters = "";
+}
+
+if (loweranswer === true) {
+    var lowCharacters = "abcdefghijklmnopqrstuvwxyz";
+}
+else {
+    var lowCharacters = "";
+}
+
+if (numericanswer === true) {
+    var numCharacters = "1234567890";
+}
+else {
+    var numCharacters = "";
+}
+
+if (specialanswer === true) {
+    var specCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~"; 
+}
+else {
+    var specCharacters = "";
+}
+
+
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
 
