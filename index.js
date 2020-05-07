@@ -52,6 +52,20 @@ while (lowercase !== "yes" && lowercase !== "no") {
   }
 }
 
+// Ask user for the use of numbers in the password.
+while (numeric !== "yes" && numeric !== "no") {
+  numeric = prompt("Do you want numeric characters? (Please answer yes or no)");
+  numeric = numeric.toLowerCase();
+
+  if (numeric === "yes") {
+    numericanswer = true;
+  } else if (numeric === "no") {
+    numericanswer = false;
+  } else {
+    alert("Please enter a valid answer.");
+  }
+}
+
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
 
