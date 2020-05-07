@@ -172,6 +172,13 @@ function makepass(length) {
 password.textContent = makepass(size);
 
 
+//Create new password.
+newpassword.addEventListener("click", function (event) {
+    event.preventDefault();
+    password.textContent = makepass(size);
+});
+
+
 //Selecting the buttons from the DOM.
 var newpassword = document.querySelector(".button1");
 var copypassword = document.querySelector(".button2");
