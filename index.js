@@ -80,6 +80,29 @@ while (symbol !== "yes" && symbol !== "no") {
   }
 }
 
+
+  // Keeps the user from inputing all criteria as false.
+  if (
+    upperanswer === false &&
+    loweranswer === false &&
+    numericanswer === false &&
+    symbolanswer === false
+  ) {
+    uppercase = null;
+    upperanswer = null;
+    lowercase = null;
+    loweranswer = null;
+    numeric = null;
+    numericanswer = null;
+    symbol = null;
+    symbolanswer = null;
+    passwordLength = 0;
+    alert("You must choose at least one of the criteria. Please start again.");
+  } else {
+    alert("Thank you.");
+  }
+}
+
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
 
