@@ -137,6 +137,18 @@ else {
 }
 
 
+//Generating the password.
+function makepass(length) {
+    var result = "";
+    var characters = upCharacters + lowCharacters + numCharacters + specCharacters;
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+password.textContent = makepass(size);
+
 //  I will start off by creating FOUR different FUNCTIONS FOR the following
 // password length
 
